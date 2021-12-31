@@ -19,7 +19,7 @@ func add() js.Func {
 		var sum float64
 
 		for _, arg := range args {
-			if arg.Type() != js.TypeNumber {
+			if arg.Type() != js.TypeNumber || arg.IsNaN() {
 				return 0
 			}
 
